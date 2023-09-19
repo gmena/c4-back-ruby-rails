@@ -1,24 +1,43 @@
-# README
+# Back-end for Connect Four clone game using Rails/Ruby
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Two players can start a game and play it using REST calls. No authentication is performed.
 
-Things you may want to cover:
 
-* Ruby version
+Create the database.
 
-* System dependencies
+```bash
+$ bin/rails db:migrate
+```
 
-* Configuration
+Start the server.
 
-* Database creation
+```bash
+$ bin/rails server
+```
 
-* Database initialization
+Make HTTP requests to start a game.
 
-* How to run the test suite
+```bash
+$ curl http://localhost:8080/connectfour -X POST && echo
+```
+```json
+{"id":1,"nextPlayer":1,"winner":0,"board":[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]]}
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Place a piece on the board (columns start at zero).
 
-* Deployment instructions
+```bash
+$ curl http://localhost:8080/connectfour/1 -X POST -d "player=1&column=0" && echo
+```
+```json
+{"id":1,"nextPlayer":2,"winner":0,"board":[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[1,0,0,0,0,0,0]]}
+```
 
-* ...
+Obtain the current state of a game.
+
+```bash
+$ curl http://localhost:8080/connectfour/1 && echo
+```
+```json
+{"id":1,"nextPlayer":2,"winner":0,"board":[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[1,0,0,0,0,0,0]]}
+```
