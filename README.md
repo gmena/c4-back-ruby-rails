@@ -1,7 +1,9 @@
-# Back-end for Connect Four clone game using Rails/Ruby
+# Back-end for Connect Four clone game using Rails / Ruby
 
 Two players can start a game and play it using REST calls. No authentication is performed.
 
+
+## Usage
 
 Create the database.
 
@@ -41,3 +43,10 @@ $ curl http://localhost:8080/connectfour/1 && echo
 ```json
 {"id":1,"nextPlayer":2,"winner":0,"board":[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[1,0,0,0,0,0,0]]}
 ```
+
+
+## Requirements
+
+- Ruby 3.2
+- Rails 7.0
+- Sqllite 3.37
