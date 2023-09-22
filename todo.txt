@@ -1,8 +1,6 @@
-Obtain game state with GET /connectfour/123
-Place a piece with POST /connectfour/123 player=1&col=0
 Return 404 (Not Found) if game not found
 Return 409 (Conflict) if piece can not be placed
 Return 409 (Conflict) if player is not expected
 Return 302 (Found) when creating new game, include Location header
 List all ongoing games with GET /connectfour
-Use a database to persist ongoing games
+Check for winner
