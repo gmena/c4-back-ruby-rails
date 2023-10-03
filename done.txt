@@ -2,3 +2,4 @@ x 2023-09-18 Start a game with POST /connectfour
 x 2023-09-21 Obtain game state with GET /connectfour/123
 x 2023-09-21 Place a piece with POST /connectfour/123 player=1&col=0
 x 2023-09-21 Use a database to persist ongoing games
+x 2023-10-02 Check for winner

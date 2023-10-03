@@ -3,4 +3,3 @@ Return 409 (Conflict) if piece can not be placed
 Return 409 (Conflict) if player is not expected
 Return 302 (Found) when creating new game, include Location header
 List all ongoing games with GET /connectfour
-Check for winner

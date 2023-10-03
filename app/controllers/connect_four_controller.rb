@@ -1,12 +1,13 @@
 class ConnectFourController < ApplicationController
-  ROWS = 6
-  COLS = 7
+  WIN_COUNT = 4
+  ROW_COUNT = 6
+  COLUMN_COUNT = 7
 
   def create_game
     game_state = GameState.new(
       next_player: 1,
       winner: nil,
-      board: Array.new(ROWS) { Array.new(COLS, 0) },
+      board: BoardHandler.create_board(ROW_COUNT, COLUMN_COUNT),
     )
     game_state.save
 
@@ -25,13 +26,12 @@ class ConnectFourController < ApplicationController
     column = params[:column].to_i
 
     board = game_state.board
-    row = (board.size - 1).downto(0).find do |r|
-      board[r][column] == 0
-    end
+    row = BoardHandler.put_piece(board, player, column)
 
     if row
-      board[row][column] = player
       game_state.next_player = (player == 1) ? 2 : 1
+      game_state.winner = player if BoardHandler.winner?(WIN_COUNT, board, player, row, column)
+
       game_state.save
 
       render json: game_state
