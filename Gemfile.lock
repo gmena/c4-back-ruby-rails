@@ -151,14 +151,20 @@ GEM
       psych (>= 4.0.0)
     reline (0.3.8)
       io-console (~> 0.5)
+    rexml (3.3.5)
+      strscan
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
       simplecov_json_formatter (~> 0.1)
+    simplecov-cobertura (2.1.0)
+      rexml
+      simplecov (~> 0.19)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
     sqlite3 (1.6.6-x86_64-linux)
     stringio (3.0.8)
+    strscan (3.1.0)
     thor (1.2.2)
     timeout (0.4.0)
     tzinfo (2.0.6)
@@ -177,6 +183,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.8)
   simplecov
+  simplecov-cobertura
   sqlite3 (~> 1.4)
   tzinfo-data
 

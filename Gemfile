@@ -32,6 +32,7 @@ gem "bootsnap", require: false
 
 # https://github.com/simplecov-ruby/simplecov
 gem 'simplecov', require: false, group: :test
+gem 'simplecov-cobertura'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
